@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents & Community - Gramon Christian School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/parents-community.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Gramon Christian School</div>
+            <div class="hamburger" id="hamburger">☰</div>
+            <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                    <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
+                    <a href="academics.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Academic Program</a>
+                    <a href="student-life.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Student Life</a>
+                    <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
+                    <a href="parents-community.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:bg-gray-50">parents-community</a>
+                    <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                </div>
+            </div>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academic Program</a></li>
+                    <li><a href="student-life.html">Student Life</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="parents-community.html">Parents & Community</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1 class="font-bold">Parents & Community</h1>
+    </section>
+
+    <section class="content-section">
+        <div class="parents-section">
+            <h2 class="font-bold">PARTNERING WITH FAMILIES</h2>
+            <p>We believe parents are the primary educators, and we are honored to walk alongside families in their children's education. Gramon Christian School maintains open, collaborative communication with parents through regular updates, school events, and parenting forums.</p>
+            
+            <h3>We encourage parents' involvement through:</h3>
+            <ul class="involvement-list">
+                <li>PTA (Parent-Teacher Association)</li>
+                <li>Regular one-on-one parent and teacher engagement</li>
+                <li>School events and functions</li>
+            </ul>
+        </div>
+        
+        <div class="faith-section">
+            <h2 class="font-bold">ROOTED IN CHRIST</h2>
+            <p>At Gramon, faith is the foundation of all we do. Every lesson, every activity, every interaction is guided by biblical truth and the love of Jesus. Through weekly chapel services, daily devotions, and spiritual mentorship, we help learners develop a personal relationship with God and a strong moral compass.</p>
+            <p>We believe in shaping hearts before shaping minds—preparing students to be ethical, compassionate, and faith-driven leaders.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academic Program</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> P. O. Box 36603-00200, Nairobi
+                        6th Avenue Malaa, along Malaa Kentraco Road, Off Kangundo Road</li>
+                    <li><i class="fas fa-phone"></i> +254 715 509 424</li>
+                    <li><i class="fas fa-envelope"></i> info@gramonschool.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Gramon Christian School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/menu-toggle.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

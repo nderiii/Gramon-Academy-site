@@ -1,0 +1,103 @@
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../New_folder/IMG-20250616-WA0069.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    margin-top: 60px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+}
+
+.content-section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admissions-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.admissions-intro h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.enrollment-section, .process-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+}
+
+.enrollment-section h3, .process-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.enrollment-list, .process-steps {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.enrollment-list li, .process-steps li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.enrollment-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+.process-steps li {
+    counter-increment: step-counter;
+}
+
+.process-steps li::before {
+    content: counter(step-counter);
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

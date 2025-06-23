@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILM Academy | Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #5cbbf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+            border: 1px solid #d1d5db;
+        }
+        
+        .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        
+        .map-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .department-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center animate-slide-left">
+                    <a href="index.html" class="flex items-center">
+                        <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10 mr-2">
+                        <span class="text-xl font-bold text-gray-900">ILM Academy</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                        <a href="about.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                        <a href="programs.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Programs</a>
+                        <a href="facilities.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
+                        <a href="admissions.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Admissions</a>
+                        <a href="contact.html" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                        <a href="privacy.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Programs</a>
+                <a href="facilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Facilities</a>
+                <a href="admissions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Admissions</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:bg-gray-50">Contact</a>
+                <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="parallax bg-gradient-to-r from-blue-500 to-cyan-600 py-32 flex items-center justify-center">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">Contact <span class="gradient-text">Us</span></h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">We'd love to hear from you! Reach out with any questions or to schedule a visit.</p>
+                <div class="animate-fade-in delay-200">
+                    <a href="#contact-form" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10 transition duration-300">
+                        Send a Message
+                        <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">Our team is ready to assist you with any inquiries about our programs, admissions, or school life.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="contact-card bg-cyan-50 p-8 rounded-xl animate-fade-in hover-scale">
+                    <div class="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt text-cyan-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Our Location</h3>
+                    <p class="text-gray-600 text-center mb-4">PQ78+X8G, Jacaranda Ave<br>Nairobi</p>
+                    <div class="text-center">
+                        <a href="#map" class="text-blue-600 font-medium inline-flex items-center">
+                            View on Map
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-card bg-cyan-50 p-8 rounded-xl animate-fade-in delay-100 hover-scale">
+                    <div class="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-phone-alt text-cyan-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Call Us</h3>
+                    <p class="text-gray-600 text-center mb-4">Main Office: 07077 96867<br>
+                    Admissions: 07077 96867</p>
+                    <div class="text-center">
+                        <a href="tel:+11234567890" class="text-blue-600 font-medium inline-flex items-center">
+                            Call Now
+                            <i class="fas fa-phone ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-card bg-cyan-50 p-8 rounded-xl animate-fade-in delay-200 hover-scale">
+                    <div class="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-envelope text-cyan-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Email Us</h3>
+                    <p class="text-gray-600 text-center mb-4">General: info@ilmacademy.net<br>
+                    Admissions: info@ilmacademy.net</p>
+                    <div class="text-center">
+                        <a href="mailto:info@ilmacademy.edu" class="text-blue-600 font-medium inline-flex items-center">
+                            Email Now
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Hours Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">School <span class="gradient-text">Hours</span></h2>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                                <span class="font-medium">Monday - Thursday</span>
+                                <span class="font-semibold">7:30 AM - 4:30 PM</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                                <span class="font-medium">Friday</span>
+                                <span class="font-semibold">7:30 AM - 1:00 PM</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                                <span class="font-medium">Weekends</span>
+                                <span class="font-semibold">Closed</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Holidays</span>
+                                <span class="font-semibold">Closed</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-blue-100 p-4 rounded-lg">
+                            <p class="text-blue-800"><i class="fas fa-info-circle mr-2"></i> Summer hours may vary. Please call ahead during summer months.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-slide-right">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Office <span class="gradient-text">Departments</span></h2>
+                    
+                    <div class="space-y-4">
+                        <div class="department-card p-6 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2 flex items-center">
+                                <i class="fas fa-user-graduate text-blue-600 mr-3"></i>
+                                Admissions Office
+                            </h3>
+                            <p class="text-gray-600 mb-2">For all inquiries about enrollment, school tours, and application process.</p>
+                            <p class="text-blue-600">admissions@ilmacademy.edu | (123) 456-7891</p>
+                        </div>
+                        
+                        <div class="department-card p-6 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2 flex items-center">
+                                <i class="fas fa-book text-indigo-600 mr-3"></i>
+                                Academic Office
+                            </h3>
+                            <p class="text-gray-600 mb-2">For curriculum questions, academic records, and teacher communications.</p>
+                            <p class="text-blue-600">academics@ilmacademy.edu | (123) 456-7892</p>
+                        </div>
+                        
+                        <!--<div class="department-card p-6 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2 flex items-center">
+                                <i class="fas fa-dollar-sign text-blue-600 mr-3"></i>
+                                Finance Office
+                            </h3>
+                            <p class="text-gray-600 mb-2">For tuition payments, financial aid, and billing questions.</p>
+                            <p class="text-blue-600">finance@ilmacademy.edu | (123) 456-7893</p>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Our <span class="gradient-text">Location</span></h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">Visit our campus to experience the ILM Academy difference firsthand.</p>
+            </div>
+            
+            <div class="map-container rounded-xl overflow-hidden shadow-xl animate-fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.847441543627!2d36.8134153!3d-1.2629805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a6f74939f1d%3A0x9f7dde1a6e8a0f1e!2sILM%20Academy!5e0!3m2!1sen!2ske!4v1623838287183!5m2!1sen!2ske" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    
+            
+            <div class="mt-8 grid md:grid-cols-3 gap-6">
+                <div class="bg-orange-50 p-6 rounded-lg animate-fade-in">
+                    <h3 class="font-semibold text-lg mb-3 flex items-center">
+                        <i class="fas fa-car text-orange-600 mr-3"></i>
+                        Parking Information
+                    </h3>
+                    <p class="text-gray-600">Visitor parking is available in the front lot. Additional parking available on the west side of the building. Please check in at the security desk for a parking pass.</p>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg animate-fade-in delay-100">
+                    <h3 class="font-semibold text-lg mb-3 flex items-center">
+                        <i class="fas fa-bus text-orange-600 mr-3"></i>
+                        Public Transportation
+                    </h3>
+                    <p class="text-gray-600">We're accessible via bus routes 12, 45, and 78. The nearest metro station is Knowledge City Central (5 minute walk).</p>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg animate-fade-in delay-200">
+                    <h3 class="font-semibold text-lg mb-3 flex items-center">
+                        <i class="fas fa-wheelchair text-orange-600 mr-3"></i>
+                        Accessibility
+                    </h3>
+                    <p class="text-gray-600">Our campus is fully ADA compliant with ramps, elevators, and accessible restrooms. Please call ahead if you require special accommodations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Send Us a <span class="gradient-text">Message</span></h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">Have questions? Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden animate-fade-in">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-600 p-12 text-white">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                                <span>PQ78+X8G, Jacaranda Ave, Nairobi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                                <span>07077 96867</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3"></i>
+                                <span>info@ilmacademy.net</span>
+                            </li>
+                        </ul>
+                        
+                        <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/profile.php?id=61553200850864&__tn__=%3C" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/ILMAcademy_Nrb" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ilma.cademy/" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-12">
+                        <form id="contactForm" class="space-y-6" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+                            <!-- Required Web3Forms keys -->
+                            <input type="hidden" name="access_key" value="22932d46-ad42-46f5-86aa-f358808208ba">
+                            <input type="hidden" name="subject" value="New Contact Form Submission from ILM Academy">
+                            <!--<input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html">-->
+                            <input type="hidden" name="replyto" value="email">
+                            <!--<input type="hidden" name="message-format" value="html">-->
+    
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input w-full px-4 py-3 rounded-lg" required>
+                            </div>
+    
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input w-full px-4 py-3 rounded-lg" required>
+                            </div>
+    
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 rounded-lg">
+                            </div>
+    
+                            <div>
+                                <label for="inquiry_type" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select id="inquiry_type" name="inquiry_type" class="form-input w-full px-4 py-3 rounded-lg" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="Admissions">Admissions Inquiry</option>
+                                    <option value="Academics">Academic Questions</option>
+                                    <option value="Finance">Tuition & Financial Aid</option>
+                                    <option value="General">General Inquiry</option>
+                                    <option value="Feedback">Feedback/Suggestions</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+    
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3 rounded-lg" required></textarea>
+                            </div>
+    
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="newsletter" name="newsletter" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="newsletter" class="font-medium text-gray-700">Subscribe to our newsletter</label>
+                                </div>
+                            </div>
+    
+                            <div class="pt-4">
+                                <button id="submitButton" type="submit" class="w-full flex justify-center items-center px-6 py-4 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-8 transition duration-300">
+                                    <span id="buttonText">Send Message</span>
+                                    <i class="fas fa-paper-plane ml-2"></i>
+                                </button>
+                            </div>
+    
+                            <!-- Feedback message container -->
+                            <div id="form-status" class="hidden p-4 mb-4 text-sm rounded-lg text-center"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">Quick <span class="gradient-text">Answers</span></h2>
+                <div class="w-24 h-1 bg-orange-600 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">Common questions about contacting and visiting ILM Academy</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg animate-fade-in">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center justify-between cursor-pointer">
+                            <span>How can I schedule a school tour?</span>
+                            <i class="fas fa-chevron-down text-indigo-600"></i>
+                        </h3>
+                        <div class="text-gray-600">
+                            <p>You can schedule a tour by calling our admissions office at (123) 456-7891 or by selecting "Admissions Inquiry" in the contact form above. Tours are typically available Monday through Thursday between 9:00 AM and 2:00 PM.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg animate-fade-in delay-100">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center justify-between cursor-pointer">
+                            <span>What documents do I need to bring for enrollment?</span>
+                            <i class="fas fa-chevron-down text-blue-600"></i>
+                        </h3>
+                        <div class="text-gray-600 hidden">
+                            <p>For enrollment, please bring:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Birth certificate</li>
+                                <li>Immunization records</li>
+                                <li>Previous school records (if applicable)</li>
+                                <li>Proof of residence</li>
+                                <li>Completed application forms</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg animate-fade-in delay-200">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center justify-between cursor-pointer">
+                            <span>Who should I contact about my child's academic progress?</span>
+                            <i class="fas fa-chevron-down text-blue-600"></i>
+                        </h3>
+                        <div class="text-gray-600 hidden">
+                            <p>Start by contacting your child's teacher directly. For broader academic concerns, you can reach out to our Academic Office at academics@ilmacademy.edu or (123) 456-7892. Parent-teacher conferences are also scheduled twice yearly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg animate-fade-in delay-300">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center justify-between cursor-pointer">
+                            <span>What are the office hours for different departments?</span>
+                            <i class="fas fa-chevron-down text-blue-600"></i>
+                        </h3>
+                        <div class="text-gray-600 hidden">
+                            <p>Most offices operate Monday-Thursday 7:30 AM to 4:30 PM and Friday 7:30 AM to 1:00 PM. Specific departments may have slightly different hours:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Admissions: 8:00 AM - 3:00 PM daily</li>
+                                <li>Finance: 9:00 AM - 3:00 PM Monday-Thursday</li>
+                                <li>Academic Office: 7:30 AM - 4:30 PM Monday-Thursday</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg animate-fade-in delay-400">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center justify-between cursor-pointer">
+                            <span>How can I volunteer at the school?</span>
+                            <i class="fas fa-chevron-down text-blue-600"></i>
+                        </h3>
+                        <div class="text-gray-600 hidden">
+                            <p>We welcome parent volunteers! Please contact our Parent-Teacher Organization (PTO) at pto@ilmacademy.edu or speak with your child's teacher about classroom volunteer opportunities. All volunteers must complete a background check.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center animate-fade-in">
+                    <p class="text-gray-600 mb-6">Didn't find your answer? We're here to help!</p>
+                    <a href="#contact-form" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10 transition duration-300">
+                        Contact Us Now
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <!-- Add a dark background container for the logo -->
+                        <div class="bg-gray-900 p-1 rounded mr-2">
+                            <img src="ilm logo.jpg" alt="ILM Academy Logo" class="h-10">
+                        </div>
+                        <span class="text-xl font-bold">ILM Academy</span>
+                    </div>
+                    <p class="text-gray-400">We provide an environment
+                        where our children develop
+                        into empathetic, selfdirected, critical thinkers who
+                        don’t give up when faced
+                        with challenges.
+                        </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-400 hover:text-white transition duration-300">Programs</a></li>
+                        <li><a href="facilities.html" class="text-gray-400 hover:text-white transition duration-300">Facilities</a></li>
+                        <li><a href="admissions.html" class="text-gray-400 hover:text-white transition duration-300">Admissions</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Programs</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400 hover:text-white transition duration-300">Get in touch</li>
+                        <p class = "text-gray-400 hover:text-white transition duration-300"><span>TELEPHONE: 07077 96867</span></p>
+                        <li class="text-gray-400 hover:text-white transition duration-300">General Email:</li>
+                        <li class="text-gray-400 hover:text-white transition duration-300"><a href="mailto:info@ilmacademy.net">info@ilmacademy.net</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                            <span>PQ78+X8G, Jacaranda Ave, Nairobi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-blue-400"></i>
+                            <span>07077 96867</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-blue-400"></i>
+                            <span>info@ilmacademy.net</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 ILM Academy. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.facebook.com/profile.php?id=61553200850864&__tn__=%3C" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/ILMAcademy_Nrb" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ilma.cademy/" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-left, .animate-slide-right');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translate(0)';
+                }
+            });
+        };
+
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.bg-gray-50.p-6.rounded-lg');
+        faqItems.forEach(item => {
+            const header = item.querySelector('h3');
+            const content = item.querySelector('div.text-gray-600');
+            
+            header.addEventListener('click', () => {
+                const isHidden = content.classList.contains('hidden');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('div.text-gray-600').classList.add('hidden');
+                        otherItem.querySelector('i.fa-chevron-down').classList.remove('fa-chevron-up');
+                        otherItem.querySelector('i.fa-chevron-down').classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Toggle current item
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    header.querySelector('i').classList.remove('fa-chevron-down');
+                    header.querySelector('i').classList.add('fa-chevron-up');
+                } else {
+                    content.classList.add('hidden');
+                    header.querySelector('i').classList.remove('fa-chevron-up');
+                    header.querySelector('i').classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // Form submission
+        //const contactForm = document.getElementById('contactForm');
+        //if (contactForm) {
+            //contactForm.addEventListener('submit', function(e) {
+                //e.preventDefault();
+                
+                // Here you would typically send the form data to your server
+                // For this example, we'll just show a success message
+                
+                //alert('Thank you for your message! We have received your inquiry and will respond within 24 hours.');
+                //contactForm.reset();
+                
+                // Scroll to top
+                //window.scrollTo({
+                    //top: 0,
+                    //behavior: 'smooth'
+                //});
+            //});
+        //}
+// Replace your current form submission code with this:
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitButton = document.getElementById('submitButton');
+    const buttonText = document.getElementById('buttonText');
+
+    // Indicate loading
+    submitButton.disabled = true;
+    buttonText.textContent = 'Sending...';
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        // On success, redirect quickly
+        if (response.ok) {
+            window.location.href = "/thank-you.html";
+        } else {
+            const result = await response.json();
+            alert("❌ Error: " + (result.message || "Something went wrong"));
+        }
+    } catch (error) {
+        alert("❌ Network error: " + error.message);
+    } finally {
+        // Re-enable button just in case
+        submitButton.disabled = false;
+        buttonText.textContent = 'Send Message';
+    }
+});
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

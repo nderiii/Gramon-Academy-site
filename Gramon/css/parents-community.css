@@ -1,0 +1,65 @@
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../New_folder/IMG-20250616-WA0125.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    margin-top: 60px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+}
+
+.content-section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parents-section, .faith-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.parents-section h2, .faith-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.parents-section h3 {
+    color: var(--accent-color);
+    margin: 1.5rem 0;
+}
+
+.involvement-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.involvement-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.involvement-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+.faith-section {
+    background-color: var(--light-color);
+    border-left: 5px solid var(--primary-color);
+}

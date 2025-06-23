@@ -1,0 +1,306 @@
+/* About Page Specific Styles */
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../New_folder/IMG-20250616-WA0108.jpg)  ;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+.about-hero .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-hero .hero-content p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+.mission-grid {
+    display: block;
+}
+
+.mission-vision-group {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 45px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.mission-image {
+    width: 40%;
+    position: relative;
+    align-self: stretch;
+}
+
+.mission-image img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.core-values {
+    width: 100%;
+}
+
+.core-values h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.value-item {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.value-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Rest of your existing CSS remains the same */
+.mission-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* History Section */
+.history-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 0 auto 20px;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.history-text p {
+    font-size: 1.1rem;
+    line-height: 2.6;
+    margin-bottom: 20px;
+}
+
+.history-image img {
+    width: 100%;
+    border-radius: 8px;
+    height: 80%;
+}
+
+/* Team Section */
+.team-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-member {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 3px solid var(--primary-color);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-member .position {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.team-member .bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Call to Action */
+.about-cta {
+    padding: 80px 0;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.about-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-cta p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .mission-grid,
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-image,
+    .history-image {
+        order: -1;
+    }
+    
+    .about-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero {
+        height: 50vh;
+    }
+    
+    .about-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .about-hero .hero-content p {
+        font-size: 1.2rem;
+    }
+}
