@@ -64,7 +64,7 @@ To view the website locally:
 - **Phone:** +254 715 509 424
 - **Email:** [info@gramonschool.com](mailto:info@gramonschool.com)
 - **WhatsApp:** [+254 723 840 135](https://wa.me/254723840135)
-- **netlifylink:** [Gramon Christian School](https://gramon.netlify.app/)
+- **netlifylink:** [Gramon Christian School](https://gramonschool.com/)
 ---
 
 © 2026 Gramon Christian School. All Rights Reserved.
